@@ -1,0 +1,7 @@
+# private list of names that must never be published
+.disclosure-terms
+
+# CVs stay out of the repo until one passes scripts/check-disclosure.sh
+*CV*.pdf
+*cv*.pdf
+!cv/anthony-njeru-cv.pdf

@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://anth0rny.github.io/sitemap.xml

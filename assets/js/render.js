@@ -33,13 +33,19 @@
       <span class="plate-k kanji" aria-hidden="true">${pr.kanji}</span>
       <span class="plate-cap">Fig. ${pr.n} · ${pr.cap}</span>
     </div>`;
-  const logo = (slug, name) => window.LOGOS && window.LOGOS[slug]
-    ? `<svg class="logo" viewBox="0 0 24 24" aria-hidden="true"><path d="${window.LOGOS[slug]}"/></svg>`
-    : `<span class="logo logo-type" aria-hidden="true">${name}</span>`;
+  /* brand-coloured logo; light brand colours get an ink tile so they stay visible on paper */
+  const logo = (slug, name) => {
+    if (!window.LOGOS || !window.LOGOS[slug]) return `<span class="logo logo-type" aria-hidden="true">${name}</span>`;
+    const color = (window.LOGO_COLORS || {})[slug] || 'currentColor';
+    const ink = (window.LOGO_ON_INK || []).includes(slug);
+    return ink
+      ? `<svg class="logo" viewBox="-4 -4 32 32" style="color:${color}" aria-hidden="true"><rect x="-4" y="-4" width="32" height="32" fill="#0c0b0d"/><path d="${window.LOGOS[slug]}"/></svg>`
+      : `<svg class="logo" viewBox="0 0 24 24" style="color:${color}" aria-hidden="true"><path d="${window.LOGOS[slug]}"/></svg>`;
+  };
   const projHead = (pr, tag = 'h3') => `
     <div class="proj-head"><span class="proj-n outline" aria-hidden="true">${pr.n}</span><div><p class="eyebrow acc">${pr.eyebrow}</p><${tag} class="proj-t display">${pr.title}</${tag}></div></div>`;
   const specs = pr => `<dl class="specs">${pr.specs.map(([t, d]) => `<div><dt>${t}</dt><dd>${d}</dd></div>`).join('')}</dl>`;
-  const hl = list => list.length ? `<ol class="hl">${list.map(h => `<li>${h}</li>`).join('')}</ol>` : '';
+  const hl = list => list.length ? `<ol class="hl">${list.map(h => `<li><span>${h}</span></li>`).join('')}</ol>` : '';
 
   const R = {
     cover: () => `
@@ -186,20 +192,31 @@
         </div>
       </div>`,
 
-    opener: () => `
-      <div class="pg red" data-folio>
+    opener: () => {
+      // chapter stats: project count, share of the biggest chapter, first page
+      const most = Math.max(...CHAPTERS.map(c => c.items.length));
+      return `
+      <div class="pg red opener-pg" data-folio>
         ${ghost('作品', 'right:-6%;top:6%;font-size:calc(var(--u)*34);opacity:.12;color:var(--ink)')}
         ${runhead('Section 04', '作品')}
         <div style="margin-top:auto">
           <p class="wt-small">${C.opener.small}</p>
           <h2 class="wt-big" data-fit>${C.opener.word}</h2>
           <p class="opener-deck display">${C.opener.deck}</p>
-          <div class="rounds">
-            ${CHAPTERS.map(c => `<button class="round" data-goto="${at(c.first)}"><span class="display">${c.n}</span>${c.short}</button>`).join('')}
-          </div>
+          <p class="eyebrow stats-head">Projects per chapter</p>
+          <ol class="stats">
+            ${CHAPTERS.map(c => `
+            <li><button class="stat" data-goto="${at(c.first)}" aria-label="Chapter ${c.n}, ${c.name}: ${c.items.length} projects, from page ${no(c.first)}">
+              <span class="stat-n display">${pad(c.items.length)}</span>
+              <span class="stat-l">${c.short}</span>
+              <span class="stat-bar" aria-hidden="true"><i style="--w:${(c.items.length / most).toFixed(3)}"></i></span>
+              <span class="stat-c">p. ${no(c.first)} ${ARROW}</span>
+            </button></li>`).join('')}
+          </ol>
           <p class="eyebrow">Chapter 01 · ${CHAPTERS[0].name} · next page</p>
         </div>
-      </div>`,
+      </div>`;
+    },
 
     chapter: pg => {
       const c = CHAPTERS[pg.chapter];

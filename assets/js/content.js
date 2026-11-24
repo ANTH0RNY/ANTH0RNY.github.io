@@ -31,43 +31,43 @@ const P = {
     n: '01', title: 'Microsoft 365 <em>Collector</em>', plain: 'Microsoft 365 monitoring collector',
     eyebrow: 'Monitoring · Backend service', plate: 'metrics', kanji: '監視',
     cap: 'Metric ridgelines, one per tenant',
-    deck: 'A Python service that collects Microsoft 365 data from many client tenants through Microsoft Graph and publishes it as Prometheus metrics. It replaced an older Zabbix setup.',
+    deck: 'A monitoring service that gives one view of the health, licences and security posture of many client Microsoft 365 tenants, published as Prometheus metrics for dashboards and alerts.',
     specs: [['Period', '2026'], ['Built at', 'Managed service provider'], ['Role', 'Monitoring & automation engineer'], ['Type', 'Backend service']],
     highlights: [
-      'Watches licences, sign-ins, mailbox and OneDrive storage, mail traffic, service health, Secure Score and expiring app credentials.',
-      'An async scheduler runs each collector per tenant. The Graph client handles retries, throttling, pagination and concurrency, and config changes apply live.',
-      'Checks each tenant’s real permissions first: missing ones are skipped and reported, not fatal. Health signals separate auth failures from permission gaps and stale data.',
-      'Secrets are encrypted at rest and scrubbed from logs. Typed with mypy, tested against mocked Graph responses, shipped by CI/CD to staging and production.'
+      '<b>Every tenant stands alone.</b> Each client has its own credentials and schedule, so one misconfigured tenant never holds up the rest.',
+      '<b>It degrades instead of failing.</b> It works with whatever a tenant permits and reports the gap, rather than breaking on a missing permission.',
+      '<b>Alerts say what is wrong.</b> Sign-in failures, missing permissions and stale data are separate signals, not one red light.',
+      '<b>Secrets stay inside.</b> Credentials are encrypted at rest, never returned by its API and kept out of the logs.'
     ],
-    stack: ['Python 3.12', 'asyncio', 'httpx', 'FastAPI', 'Pydantic', 'Prometheus', 'SQLite', 'Docker', 'Gitea Actions', 'Portainer', 'Microsoft Graph', 'Entra ID']
+    stack: ['Python', 'FastAPI', 'Microsoft Graph', 'Prometheus', 'Docker']
   },
   ot: {
     n: '02', title: 'OT/PLC <em>Monitoring</em>', plain: 'OT/PLC monitoring pilot',
     eyebrow: 'Monitoring · Industrial', plate: 'network', kanji: '制御',
     cap: 'Discovery from the switch side',
-    deck: 'A passive asset-discovery and health-monitoring agent for industrial controllers (PLCs). It never actively scans the control network, so it can’t put a live process at risk.',
+    deck: 'A pilot that maps the controllers (PLCs) on an industrial network, watches their health and flags known firmware vulnerabilities, without ever putting the live process at risk.',
     specs: [['Period', '2026 – present'], ['Built at', 'Managed service provider'], ['Role', 'Monitoring & automation engineer'], ['Status', 'Pilot, in progress']],
     highlights: [
-      'Discovers devices from the switch side (SNMPv3 MAC/ARP tables, LLDP/CDP neighbours and a passive listener) instead of port-scanning.',
-      'Identifies controllers and modules over EtherNet/IP/CIP, strictly read-only: catalog number, hardware series and firmware revision.',
-      'Maps status to healthy, degraded, faulted or unknown, and records changes such as a firmware update as events, separate from alarms.',
-      'Matches devices against vendor CSAF advisories and the CISA KEV list, down to hardware series. Runs in hardened, read-only containers.'
+      '<b>Passive by principle.</b> It learns what is on the network from the switches, and never scans the control network itself.',
+      '<b>Look, don’t touch.</b> It identifies controllers and their modules strictly read-only.',
+      '<b>Changes are not alarms.</b> A firmware update or a removed module is recorded as an event, kept apart from real faults.',
+      '<b>Precise warnings.</b> Vulnerabilities are matched down to the hardware revision, so an advisory applies to the device actually installed.'
     ],
-    stack: ['Python', 'FastAPI', 'SQLite + Alembic', 'Docker Compose', 'Netdisco', 'SNMPv3', 'LLDP/CDP', 'EtherNet/IP · CIP (pylogix)', 'CSAF', 'CISA KEV']
+    stack: ['Python', 'FastAPI', 'SNMPv3', 'EtherNet/IP · CIP', 'CSAF', 'CISA KEV', 'Docker']
   },
   vmware: {
     n: '03', title: 'vmware-<em>automation</em>', plain: 'vmware-automation',
     eyebrow: 'Infrastructure · Internal tool', plate: 'clones', kanji: '仮想',
     cap: 'One golden template, many clones',
-    deck: 'An internal tool that provisions client VMs on VMware vSphere from a Linux template, then patches the OS and installs the software each client needs.',
+    deck: 'An internal tool that turns a new client server into a single step: a VM on VMware vSphere, built from a standard template, patched and set up with the software that client needs.',
     specs: [['Period', '2026'], ['Built at', 'Managed service provider'], ['Role', 'Monitoring & automation engineer'], ['Scope', 'Internal tooling']],
     highlights: [
-      'Clones VMs from a hardened Linux golden template through the vCenter API; SSH host keys and machine-id are regenerated per clone.',
-      'Updates the OS on first build, so new VMs start fully patched.',
-      'Installs each client’s software from that client’s requirements, so builds are repeatable.',
-      'Walks the vCenter inventory (datacenters, clusters, hosts, folders) to place each VM correctly.'
+      '<b>One golden template.</b> Every VM starts from the same hardened Linux image, so no two builds drift apart.',
+      '<b>Every clone is its own machine.</b> Identities such as SSH host keys are regenerated, so servers never share secrets.',
+      '<b>Up to date on day one.</b> New VMs are patched before anyone logs in.',
+      '<b>Defined once per client.</b> Each client’s software is described once and applied on every build.'
     ],
-    stack: ['Python', 'pyVmomi', 'uv', 'VMware vSphere / vCenter', 'Linux']
+    stack: ['Python', 'pyVmomi', 'VMware vSphere', 'Linux']
   },
   cms: {
     n: '04', title: 'Construction <em>Management</em>', plain: 'Construction Management System',
@@ -282,7 +282,7 @@ window.SECTIONS = ['Cover', 'Profile', 'Career', 'Work', 'Contact'];
 window.PAGES = [
   { id: 'cover', type: 'cover', theme: 'red', section: 'Cover' },
   { id: 'contents', type: 'contents', theme: 'paper', section: 'Cover' },
-  { id: 'preface', type: 'letter', theme: 'paper', section: 'Profile' },
+  { id: 'preface', type: 'letter', theme: 'paper', section: 'Profile', tex: 'circuit' },
   { id: 'portrait', type: 'portrait', theme: 'dark', section: 'Profile' },
   { id: 'profile', type: 'profile', theme: 'paper', section: 'Profile' },
   { id: 'experience', type: 'experience', theme: 'dark', section: 'Career' },
@@ -355,7 +355,7 @@ window.COPY = {
     roles: [
       { period: 'Sep 2026 – present', role: 'Monitoring & Automation Engineer', org: 'Managed service provider (MSP)', where: 'Nairobi',
         points: [
-          'Built a multi-tenant Microsoft 365 monitoring collector (Python, Microsoft Graph, Prometheus) to replace an older Zabbix setup.',
+          'Built a multi-tenant Microsoft 365 monitoring collector (Python, Microsoft Graph, Prometheus).',
           'Building a passive OT/PLC asset-discovery and health-monitoring pilot for an industrial control network.',
           'Built a tool that provisions client VMs on vSphere from a Linux template and installs each client’s software.',
           'Built a white-labelled Zabbix Windows agent and MSI installer, custom templates and VMware dashboards; automated Zabbix deployment and upgrades.'

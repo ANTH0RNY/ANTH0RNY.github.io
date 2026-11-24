@@ -80,7 +80,7 @@ Each page takes one theme class: `.paper`, `.dark`, `.red` or `.deep`. Alternate
 - `cover`, `contents`, `letter`, `portrait`, `profile`: the opening pages.
 - `experience`, `skills`, `education`: the career pages, built from hairline rows.
 - `languages`: programming languages and tools as monochrome logos, plus spoken languages.
-- `opener`: the red **WORK** page, with round buttons for the chapters.
+- `opener`: the **WORK** page on a deeper crimson (`.opener-pg`), with a row of chapter stats (project count, share bar, first page) that link to each chapter.
 - `chapter`: deep-red chapter openers, with a giant word and the chapter's project list.
 - `single`: one project on one page (plate or photo, highlights, stack, specs). Every project uses it; keep each to about four highlights so it fits. `alt: true` puts the plate at the bottom.
 - `quote`: a full-bleed breather page with one large quotation.
@@ -119,11 +119,11 @@ A project can also carry an `inset` (`src`, `alt`, `cap`): a smaller photo tippe
 
 ## Textures
 
-No page is a flat colour. Every page has a soft, blotchy tone (`--mottle`) and fine grain (`--noise`). It also has one pattern: `dots`, `lines`, `rings`, `grid` or `hatch`. The pattern is densest in one corner and fades across the page: `::before` is the light outer field, and `::after` is a tighter version near the corner. `render.js` picks the pattern and corner per page, so neighbouring pages never share a pattern. On project pages the pattern sits at the end away from the plate. Pages with a full-bleed drawing (cover, portrait, quote, back cover) stay plain. A page can choose its pattern with `tex: '<name>'`. Keep pattern ink faint (`--pat`, at most about 14% alpha) so text contrast holds.
+No page is a flat colour. Every page has a soft, blotchy tone (`--mottle`) and fine grain (`--noise`). It also has one pattern: `dots`, `lines`, `rings`, `grid` or `hatch`. The pattern is densest in one corner and fades across the page: `::before` is the light outer field, and `::after` is a tighter version near the corner. `render.js` picks the pattern and corner per page, so neighbouring pages never share a pattern. On project pages the pattern sits at the end away from the plate. Pages with a full-bleed drawing (cover, portrait, quote, back cover) stay plain. A page can choose its pattern with `tex: '<name>'`. The Preface uses `circuit`: two seamless circuit-board tiles (`--circ-a-*` sparse traces, vias and pads; `--circ-b-*` a bus and a chip near the corner), in ink on paper pages and in paper on dark ones. Keep pattern ink faint (`--pat`, at most about 14% alpha) so text contrast holds.
 
 ## Logos
 
-`assets/js/logos.js` holds monochrome marks from [Simple Icons](https://simpleicons.org) (CC0). They are filled with `currentColor`, so they take the page's ink; only the lead language (Python) is in the accent colour. Never use brand colours: they would break the one-accent rule. To add a tool, copy the `<path d>` of its Simple Icons SVG into `LOGOS` under its slug. A `null` slug renders the name in condensed type instead (used for SQL).
+`assets/js/logos.js` holds marks from [Simple Icons](https://simpleicons.org) (CC0), each in its own brand colour (`LOGO_COLORS`). This is the one deliberate exception to the one-accent rule: the Languages page is meant to be the colourful page. Brand colours with less than 2:1 contrast on paper (`LOGO_ON_INK`: JavaScript, React, Vue, Nuxt, Linux) sit on a square ink tile drawn inside the SVG. To add a tool, copy the `<path d>` of its Simple Icons SVG into `LOGOS` and its hex into `LOGO_COLORS`, and add it to `LOGO_ON_INK` if the colour is light. A `null` slug renders the name in condensed type instead (used for SQL).
 
 ## Rules
 

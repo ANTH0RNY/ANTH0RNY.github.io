@@ -10,6 +10,11 @@
   --f-display:"Bodoni Moda","Didot","Bodoni 72",Georgia,serif;
   --f-body:"Archivo","Helvetica Neue",Arial,sans-serif;
   --f-jp:"Noto Serif JP","Hiragino Mincho ProN","Yu Mincho",serif;
+  /* circuit-board traces (page textures: data-tex="circuit"); generated, see DESIGN.md */
+  --circ-a-ink:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160' viewBox='0 0 160 160'%3E%3Cg fill='none' stroke='%230c0b0d' stroke-width='1.3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M0 22H48L60 34H112L124 22H160'/%3E%3Cpath d='M0 104H28L44 120H88V160'/%3E%3Cpath d='M88 0V10'/%3E%3Cpath d='M70 34V52L80 62V84'/%3E%3Cpath d='M140 34V70L124 86H104'/%3E%3Cpath d='M12 160V146L24 134V118'/%3E%3Cpath d='M12 0V8'/%3E%3Cpath d='M104 86V118L118 132H160'/%3E%3Cpath d='M0 132H6'/%3E%3Ccircle cx='80' cy='84' r='3.4'/%3E%3Ccircle cx='80' cy='84' r='.9' fill='%230c0b0d'/%3E%3Ccircle cx='104' cy='86' r='3.4'/%3E%3Ccircle cx='104' cy='86' r='.9' fill='%230c0b0d'/%3E%3Ccircle cx='24' cy='118' r='3.4'/%3E%3Ccircle cx='24' cy='118' r='.9' fill='%230c0b0d'/%3E%3Ccircle cx='88' cy='10' r='3.4'/%3E%3Ccircle cx='88' cy='10' r='.9' fill='%230c0b0d'/%3E%3Ccircle cx='12' cy='8' r='3.4'/%3E%3Ccircle cx='12' cy='8' r='.9' fill='%230c0b0d'/%3E%3Crect x='137' y='31' width='6' height='6' fill='%230c0b0d' stroke='none'/%3E%3Crect x='67' y='31' width='6' height='6' fill='%230c0b0d' stroke='none'/%3E%3Crect x='3' y='129' width='6' height='6' fill='%230c0b0d' stroke='none'/%3E%3C/g%3E%3C/svg%3E");
+  --circ-b-ink:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160' viewBox='0 0 160 160'%3E%3Cg fill='none' stroke='%230c0b0d' stroke-width='1.3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M0 14H40L52 26H96L108 14H160'/%3E%3Cpath d='M0 22H40L52 34H96L108 22H160'/%3E%3Cpath d='M0 30H40L52 42H96L108 30H160'/%3E%3Crect x='54' y='70' width='52' height='36' rx='1'/%3E%3Cpath d='M60 70V62M60 106V114'/%3E%3Cpath d='M68 70V62M68 106V114'/%3E%3Cpath d='M76 70V62M76 106V114'/%3E%3Cpath d='M84 70V62M84 106V114'/%3E%3Cpath d='M92 70V62M92 106V114'/%3E%3Cpath d='M100 70V62M100 106V114'/%3E%3Ccircle cx='61' cy='77' r='1.6' fill='%230c0b0d'/%3E%3Cpath d='M60 62V44H24V0'/%3E%3Cpath d='M24 160V150'/%3E%3Cpath d='M76 62V48L84 40H160'/%3E%3Cpath d='M0 40H6'/%3E%3Cpath d='M92 114V136H160'/%3E%3Cpath d='M0 136H10'/%3E%3Cpath d='M100 114V128L112 140V160'/%3E%3Cpath d='M112 0V6'/%3E%3Cpath d='M68 114V150L56 160'/%3E%3Cpath d='M56 0L48 8'/%3E%3Cpath d='M130 70H150V100H160'/%3E%3Cpath d='M0 100H8L16 92V60'/%3E%3Cpath d='M106 88H130V70'/%3E%3Ccircle cx='16' cy='60' r='3.4'/%3E%3Ccircle cx='16' cy='60' r='.9' fill='%230c0b0d'/%3E%3Ccircle cx='150' cy='70' r='3.4'/%3E%3Ccircle cx='150' cy='70' r='.9' fill='%230c0b0d'/%3E%3Ccircle cx='10' cy='136' r='3.4'/%3E%3Ccircle cx='10' cy='136' r='.9' fill='%230c0b0d'/%3E%3Ccircle cx='6' cy='40' r='3.4'/%3E%3Ccircle cx='6' cy='40' r='.9' fill='%230c0b0d'/%3E%3Ccircle cx='48' cy='8' r='3.4'/%3E%3Ccircle cx='48' cy='8' r='.9' fill='%230c0b0d'/%3E%3Ccircle cx='112' cy='6' r='3.4'/%3E%3Ccircle cx='112' cy='6' r='.9' fill='%230c0b0d'/%3E%3Ccircle cx='24' cy='150' r='3.4'/%3E%3Ccircle cx='24' cy='150' r='.9' fill='%230c0b0d'/%3E%3C/g%3E%3C/svg%3E");
+  --circ-a-pap:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160' viewBox='0 0 160 160'%3E%3Cg fill='none' stroke='%23efebe3' stroke-width='1.3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M0 22H48L60 34H112L124 22H160'/%3E%3Cpath d='M0 104H28L44 120H88V160'/%3E%3Cpath d='M88 0V10'/%3E%3Cpath d='M70 34V52L80 62V84'/%3E%3Cpath d='M140 34V70L124 86H104'/%3E%3Cpath d='M12 160V146L24 134V118'/%3E%3Cpath d='M12 0V8'/%3E%3Cpath d='M104 86V118L118 132H160'/%3E%3Cpath d='M0 132H6'/%3E%3Ccircle cx='80' cy='84' r='3.4'/%3E%3Ccircle cx='80' cy='84' r='.9' fill='%23efebe3'/%3E%3Ccircle cx='104' cy='86' r='3.4'/%3E%3Ccircle cx='104' cy='86' r='.9' fill='%23efebe3'/%3E%3Ccircle cx='24' cy='118' r='3.4'/%3E%3Ccircle cx='24' cy='118' r='.9' fill='%23efebe3'/%3E%3Ccircle cx='88' cy='10' r='3.4'/%3E%3Ccircle cx='88' cy='10' r='.9' fill='%23efebe3'/%3E%3Ccircle cx='12' cy='8' r='3.4'/%3E%3Ccircle cx='12' cy='8' r='.9' fill='%23efebe3'/%3E%3Crect x='137' y='31' width='6' height='6' fill='%23efebe3' stroke='none'/%3E%3Crect x='67' y='31' width='6' height='6' fill='%23efebe3' stroke='none'/%3E%3Crect x='3' y='129' width='6' height='6' fill='%23efebe3' stroke='none'/%3E%3C/g%3E%3C/svg%3E");
+  --circ-b-pap:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160' viewBox='0 0 160 160'%3E%3Cg fill='none' stroke='%23efebe3' stroke-width='1.3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M0 14H40L52 26H96L108 14H160'/%3E%3Cpath d='M0 22H40L52 34H96L108 22H160'/%3E%3Cpath d='M0 30H40L52 42H96L108 30H160'/%3E%3Crect x='54' y='70' width='52' height='36' rx='1'/%3E%3Cpath d='M60 70V62M60 106V114'/%3E%3Cpath d='M68 70V62M68 106V114'/%3E%3Cpath d='M76 70V62M76 106V114'/%3E%3Cpath d='M84 70V62M84 106V114'/%3E%3Cpath d='M92 70V62M92 106V114'/%3E%3Cpath d='M100 70V62M100 106V114'/%3E%3Ccircle cx='61' cy='77' r='1.6' fill='%23efebe3'/%3E%3Cpath d='M60 62V44H24V0'/%3E%3Cpath d='M24 160V150'/%3E%3Cpath d='M76 62V48L84 40H160'/%3E%3Cpath d='M0 40H6'/%3E%3Cpath d='M92 114V136H160'/%3E%3Cpath d='M0 136H10'/%3E%3Cpath d='M100 114V128L112 140V160'/%3E%3Cpath d='M112 0V6'/%3E%3Cpath d='M68 114V150L56 160'/%3E%3Cpath d='M56 0L48 8'/%3E%3Cpath d='M130 70H150V100H160'/%3E%3Cpath d='M0 100H8L16 92V60'/%3E%3Cpath d='M106 88H130V70'/%3E%3Ccircle cx='16' cy='60' r='3.4'/%3E%3Ccircle cx='16' cy='60' r='.9' fill='%23efebe3'/%3E%3Ccircle cx='150' cy='70' r='3.4'/%3E%3Ccircle cx='150' cy='70' r='.9' fill='%23efebe3'/%3E%3Ccircle cx='10' cy='136' r='3.4'/%3E%3Ccircle cx='10' cy='136' r='.9' fill='%23efebe3'/%3E%3Ccircle cx='6' cy='40' r='3.4'/%3E%3Ccircle cx='6' cy='40' r='.9' fill='%23efebe3'/%3E%3Ccircle cx='48' cy='8' r='3.4'/%3E%3Ccircle cx='48' cy='8' r='.9' fill='%23efebe3'/%3E%3Ccircle cx='112' cy='6' r='3.4'/%3E%3Ccircle cx='112' cy='6' r='.9' fill='%23efebe3'/%3E%3Ccircle cx='24' cy='150' r='3.4'/%3E%3Ccircle cx='24' cy='150' r='.9' fill='%23efebe3'/%3E%3C/g%3E%3C/svg%3E");
   /* large, soft blotches so no page is one flat colour */
   --mottle:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='560' viewBox='0 0 400 560' preserveAspectRatio='none'%3E%3Cfilter id='m'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.008 .006' numOctaves='3' seed='7'/%3E%3CfeColorMatrix values='0 0 0 0 .5 0 0 0 0 .5 0 0 0 0 .5 0 0 0 .7 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23m)'/%3E%3C/svg%3E");
   --noise:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .5 0 0 0 0 .5 0 0 0 0 .5 0 0 0 .55 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
@@ -118,6 +123,10 @@ code{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:
 .pg[data-tex="rings"]::after{background:repeating-radial-gradient(circle at var(--tx,100%) var(--ty,100%),var(--pat) 0 1px,transparent 1px calc(var(--u)*.7))}
 .pg[data-tex="grid"]::before{background:linear-gradient(var(--pat) 1px,transparent 1px) 0 0/calc(var(--u)*3) calc(var(--u)*3),linear-gradient(90deg,var(--pat) 1px,transparent 1px) 0 0/calc(var(--u)*3) calc(var(--u)*3)}
 .pg[data-tex="grid"]::after{background:linear-gradient(var(--pat) 1px,transparent 1px) 0 0/calc(var(--u)*.75) calc(var(--u)*.75),linear-gradient(90deg,var(--pat) 1px,transparent 1px) 0 0/calc(var(--u)*.75) calc(var(--u)*.75)}
+.pg[data-tex="circuit"]::before{background:var(--circ-a) 0 0/calc(var(--u)*17) calc(var(--u)*17);opacity:.2}
+.pg[data-tex="circuit"]::after{background:var(--circ-b) calc(var(--u)*5) calc(var(--u)*3)/calc(var(--u)*15) calc(var(--u)*15);opacity:.22}
+.pg.paper{--circ-a:var(--circ-a-ink);--circ-b:var(--circ-b-ink)}
+.pg.dark,.pg.red,.pg.deep{--circ-a:var(--circ-a-pap);--circ-b:var(--circ-b-pap)}
 .pg[data-tex="none"]::before,.pg[data-tex="none"]::after{display:none}
 .mode-single .pg{--u:calc(min(1cqh,1.7cqw) * var(--k,1))}
 @media (max-width:700px){.mode-stack .pg{--u:calc(min(1cqh,1.7cqw) * var(--k,1))}}
@@ -155,7 +164,7 @@ figure.plate-wrap{margin-bottom:0}
 .btn{all:unset;cursor:pointer;box-sizing:border-box;display:inline-flex;align-items:center;gap:.7em;min-height:calc(var(--u)*4.4);padding:0 calc(var(--u)*1.8);border:1px solid currentColor;border-radius:999px;font-size:var(--t-xs);letter-spacing:.16em;text-transform:uppercase;font-weight:600;position:relative;z-index:1}
 .btn:hover{background:var(--fg);color:var(--bg)}
 .btn svg{width:1.3em;height:1.3em}
-.btn:focus-visible,.toc-link:focus-visible,.chip:focus-visible,.round:focus-visible,.inline-link:focus-visible,.pg a:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+.btn:focus-visible,.toc-link:focus-visible,.chip:focus-visible,.stat:focus-visible,.inline-link:focus-visible,.pg a:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
 .inline-link{all:unset;cursor:pointer;color:var(--accent);text-decoration:underline;text-underline-offset:.2em;white-space:nowrap}
 
 /* cover */
@@ -246,7 +255,7 @@ figure.plate-wrap{margin-bottom:0}
 .pg .langs{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--rule);margin-bottom:calc(var(--u)*2.4)}
 .langs li{display:flex;flex-direction:column;gap:calc(var(--u)*.5);padding:calc(var(--u)*1.6) calc(var(--u)*1.4) calc(var(--u)*1.5) 0;border-bottom:1px solid var(--rule)}
 .langs li:first-child{grid-column:span 2;display:grid;grid-template-columns:auto 1fr;align-content:center;column-gap:calc(var(--u)*2);row-gap:calc(var(--u)*.6)}
-.langs li:first-child .logo{grid-row:span 2;align-self:center;width:calc(var(--u)*9);height:calc(var(--u)*9);margin:0;color:var(--accent)}
+.langs li:first-child .logo{grid-row:span 2;align-self:center;width:calc(var(--u)*9);height:calc(var(--u)*9);margin:0}
 .langs li:first-child .lang-n{align-self:end}
 .langs li:first-child .lang-n{font-size:calc(var(--u)*4.4)}
 .langs .logo{width:calc(var(--u)*4.6);height:calc(var(--u)*4.6);margin-bottom:calc(var(--u)*.5)}
@@ -255,17 +264,31 @@ figure.plate-wrap{margin-bottom:0}
 .lang-u{font-size:var(--t-xs);letter-spacing:.1em;text-transform:uppercase;color:var(--mute);line-height:1.35}
 .tools{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:calc(var(--u)*1.5) calc(var(--u)*1)}
 .tools li{display:flex;align-items:center;gap:calc(var(--u)*1);min-width:0}
-.tools .logo{flex:none;width:calc(var(--u)*2.8);height:calc(var(--u)*2.8);opacity:.9}
+.tools .logo{flex:none;width:calc(var(--u)*2.8);height:calc(var(--u)*2.8)}
 .tools span{font-size:calc(var(--u)*.98);letter-spacing:.06em;text-transform:uppercase;font-weight:600;color:var(--mute);white-space:nowrap}
 
 /* work opener & chapters */
 .wt-small{font-size:var(--t-m);letter-spacing:.32em;font-weight:600;text-transform:uppercase}
 .wt-big{font-family:var(--f-body);font-weight:900;font-stretch:62%;font-size:min(calc(var(--u)*27),38cqw);line-height:.8;letter-spacing:-.02em;margin:calc(var(--u)*.6) 0 calc(var(--u)*2);background:linear-gradient(180deg,var(--paper) 35%,rgba(239,235,228,.2) 100%);-webkit-background-clip:text;background-clip:text;color:transparent}
 .opener-deck{font-size:var(--t-m);max-width:26ch}
-.rounds{display:flex;flex-wrap:wrap;gap:calc(var(--u)*1.2);margin:calc(var(--u)*3) 0 calc(var(--u)*2.4)}
-.round{all:unset;cursor:pointer;box-sizing:border-box;width:min(calc(var(--u)*12.4),19cqw);aspect-ratio:1;border-radius:50%;border:1px solid var(--rule);display:grid;place-content:center;text-align:center;gap:.2em;font-size:var(--t-xs);letter-spacing:.08em;text-transform:uppercase;font-weight:600;transition:background .2s,color .2s}
-.round .display{font-size:var(--t-m);letter-spacing:0;font-weight:700;text-transform:none}
-.round:hover{background:var(--paper);color:var(--red)}
+/* the Work opener sits on a deeper crimson than the other red pages, with a quieter
+   texture and a firmer WORK, so the paper-white text reads cleanly */
+.pg.red.opener-pg{--bg:#840913;--pat:rgba(12,11,13,.07);--rule:rgba(239,235,228,.32)}
+.opener-pg .wt-big{background:linear-gradient(180deg,var(--paper) 45%,rgba(239,235,228,.55) 100%);-webkit-background-clip:text;background-clip:text}
+/* chapter stats: count, label, share bar, page */
+.pg .stats{display:grid;grid-template-columns:repeat(4,1fr);border-top:2px solid var(--fg);border-bottom:1px solid var(--rule);margin:calc(var(--u)*2.8) 0 calc(var(--u)*2.2)}
+.stats li + li .stat{border-left:1px solid var(--rule);padding-left:calc(var(--u)*1.4)}
+.stat{all:unset;cursor:pointer;box-sizing:border-box;position:relative;z-index:1;width:100%;height:100%;display:flex;flex-direction:column;gap:calc(var(--u)*.7);padding:calc(var(--u)*1.5) calc(var(--u)*1.2) calc(var(--u)*1.3) 0;transition:background .2s}
+.stat-n{font-size:calc(var(--u)*6.4);line-height:.82;font-weight:500;letter-spacing:-.02em}
+.stat-l{font-size:var(--t-xs);letter-spacing:.16em;text-transform:uppercase;font-weight:700}
+.stat-bar{display:block;height:3px;background:rgba(239,235,228,.22)}
+.stat-bar i{display:block;height:100%;width:calc(var(--w) * 100%);background:var(--paper);transform-origin:left;transition:transform .3s}
+.pg .stats-head{margin-top:calc(var(--u)*2.6)}
+.pg .stats-head + .stats{margin-top:calc(var(--u)*.9)}
+.stat-c{display:flex;align-items:center;gap:.5em;white-space:nowrap;font-size:var(--t-xs);letter-spacing:.1em;text-transform:uppercase;color:var(--mute)}
+.stat-c svg{width:1.3em;height:1.3em;transition:transform .2s}
+.stat:hover .stat-n{font-style:italic}
+.stat:hover .stat-c svg{transform:translateX(.3em)}
 .chapter-toc{margin-top:calc(var(--u)*3)}
 .chapter-toc .toc-link{padding:calc(var(--u)*.8) 0}
 
@@ -337,6 +360,9 @@ figure.plate-wrap{margin-bottom:0}
   .roles li{grid-template-columns:1fr;gap:calc(var(--u)*.4)}
   .skillrows div{grid-template-columns:calc(var(--u)*12) 1fr}
   .pg .langs{grid-template-columns:repeat(2,1fr)}
+  .pg .stats{grid-template-columns:repeat(2,1fr)}
+  .stats li:nth-child(odd) .stat{border-left:0;padding-left:0}
+  .stats li:nth-child(n+3){border-top:1px solid var(--rule)}
   .langs li:first-child{grid-column:span 2}
   .tools{grid-template-columns:repeat(5,1fr)}
 }
